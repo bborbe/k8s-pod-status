@@ -13,3 +13,7 @@ Prod:
 https://prod.quant.benjamin-borbe.de/admin/k8s-pod-status/setloglevel/3
 https://prod.quant.benjamin-borbe.de/admin/k8s-pod-status/status
 https://prod.quant.benjamin-borbe.de/admin/k8s-pod-status/failed
+
+## License
+
+This project is licensed under the BSD-style license. See the [LICENSE](LICENSE) file for details.
