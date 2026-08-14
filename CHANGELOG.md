@@ -8,6 +8,11 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+## Unreleased
+
+- chore: Ignore the generated /vendor/ dir — `make build` vendors it via check-go-mod (matching the trading repo's Makefile.docker), `make precommit` removes it again via ensure, and it is never tracked; leaving it unignored made `git add .` liable to commit the whole vendor tree
+- chore: Update Go from 1.26.5 to 1.26.6 (go.mod, Dockerfile, CI) and golang.org/x/mod from v0.37.0 to v0.40.0 to clear the vulncheck failures blocking CI
+
 ## v0.1.2
 
 - docs: add a License section to the README
