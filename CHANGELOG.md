@@ -8,6 +8,10 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+## Unreleased
+
+- chore: Ignore the generated /vendor/ dir — it is produced by `go mod vendor` during `make precommit` and is not tracked, so leaving it unignored made `git add .` liable to commit the whole vendor tree
+
 ## v0.1.2
 
 - docs: add a License section to the README

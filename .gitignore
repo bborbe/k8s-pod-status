@@ -1,4 +1,5 @@
 **/data
+/vendor/
 /.update-logs/
 /.claude/
 /CLAUDE.md
