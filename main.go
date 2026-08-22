@@ -63,6 +63,7 @@ func (a *application) createHTTPServer() run.Func {
 		router.Path("/readiness").Handler(libhttp.NewPrintHandler("OK"))
 		router.Path("/metrics").Handler(promhttp.Handler())
 		router.Path("/setloglevel/{level}").Handler(libfactory.CreateSetLoglevelHandler(ctx))
+		router.Path("/gc").Handler(libhttp.NewGarbageCollectorHandler())
 		router.Path("/status").Handler(factory.CreateListStatusHandler(a.Kubeconfig, a.Namespace))
 
 		router.Path("/failed").Handler(factory.CreateListFailedHandler(a.Kubeconfig, a.Namespace))

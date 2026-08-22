@@ -12,6 +12,7 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 
 - fix: Emit a `version` label on `build_info` by migrating to shared `github.com/bborbe/metrics` and dropping the private `pkg/libmetrics` copy. The local copy registered a bare unlabelled `Gauge`, and quant's fleet `BuildStale` rule selects `build_info{version!~"^v[0-9]+[.][0-9]+[.][0-9]+$"}` — PromQL treats an absent label as `""`, which does not match, so every label-less series stayed permanently in scope and re-fired 14 days after each rebuild. `v0.1.1` papered over this by refreshing the build; a `version` label fixes it for good, and tagged releases now self-exempt while untagged builds (`v0.1.4-3-gabc1234`) stay correctly covered. Same fix `sentry-proxy` and `alert-controller` took on 2026-07-25.
 - fix: Pass `BUILD_GIT_VERSION` through to the binary. The Dockerfile and Makefile already baked it in, but `main.go` never read it, so the value was discarded at startup. Also wires up the previously unused `BuildGitCommit` field, now emitted as the `commit` label.
+- fix: Register the canonical `/gc` admin endpoint, which was missing from the admin HTTP server. Present in `go-skeleton` and 59 other fleet services; used on-call to force garbage collection.
 - chore: Adopting the shared metrics lib pulled transitive bumps (prometheus/client_golang v1.23.2→v1.24.1, getsentry/sentry-go v0.47.0→v0.48.0, protobuf, and several bborbe libs).
 
 ## v0.1.4
