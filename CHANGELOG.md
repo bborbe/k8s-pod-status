@@ -8,6 +8,10 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+## Unreleased
+
+- chore: update Go to 1.27.0 and github.com/bborbe/errors to v1.5.20, github.com/bborbe/http to v1.26.23, github.com/bborbe/k8s to v1.14.11, github.com/bborbe/log to v1.6.23, github.com/bborbe/metrics to v0.5.13, github.com/bborbe/run to v1.9.37, github.com/bborbe/sentry to v1.9.26, github.com/bborbe/service to v1.10.9, github.com/bborbe/time to v1.27.10, github.com/onsi/ginkgo/v2 to v2.32.1, k8s.io/api to v0.36.4, k8s.io/apimachinery to v0.36.4, k8s.io/client-go to v0.36.4
+
 ## v0.1.5
 
 - fix: Emit a `version` label on `build_info` by migrating to shared `github.com/bborbe/metrics` and dropping the private `pkg/libmetrics` copy. The local copy registered a bare unlabelled `Gauge`, and quant's fleet `BuildStale` rule selects `build_info{version!~"^v[0-9]+[.][0-9]+[.][0-9]+$"}` — PromQL treats an absent label as `""`, which does not match, so every label-less series stayed permanently in scope and re-fired 14 days after each rebuild. `v0.1.1` papered over this by refreshing the build; a `version` label fixes it for good, and tagged releases now self-exempt while untagged builds (`v0.1.4-3-gabc1234`) stay correctly covered. Same fix `sentry-proxy` and `alert-controller` took on 2026-07-25.
