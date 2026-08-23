@@ -8,6 +8,10 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+## Unreleased
+
+- chore: update Go to 1.27.0 and update dependencies
+
 ## v0.1.5
 
 - fix: Emit a `version` label on `build_info` by migrating to shared `github.com/bborbe/metrics` and dropping the private `pkg/libmetrics` copy. The local copy registered a bare unlabelled `Gauge`, and quant's fleet `BuildStale` rule selects `build_info{version!~"^v[0-9]+[.][0-9]+[.][0-9]+$"}` — PromQL treats an absent label as `""`, which does not match, so every label-less series stayed permanently in scope and re-fired 14 days after each rebuild. `v0.1.1` papered over this by refreshing the build; a `version` label fixes it for good, and tagged releases now self-exempt while untagged builds (`v0.1.4-3-gabc1234`) stay correctly covered. Same fix `sentry-proxy` and `alert-controller` took on 2026-07-25.
