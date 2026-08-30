@@ -3,10 +3,11 @@ module github.com/bborbe/k8s-pod-status
 go 1.27.0
 
 require (
-	github.com/bborbe/errors v1.5.20
+	github.com/bborbe/errors v1.5.21
 	github.com/bborbe/http v1.26.23
 	github.com/bborbe/k8s v1.14.11
 	github.com/bborbe/log v1.6.23
+	github.com/bborbe/metrics v0.6.0
 	github.com/bborbe/run v1.9.37
 	github.com/bborbe/sentry v1.9.26
 	github.com/bborbe/service v1.10.9
@@ -24,17 +25,17 @@ require (
 require (
 	github.com/Masterminds/semver/v3 v3.5.0 // indirect
 	github.com/bborbe/argument/v2 v2.12.36 // indirect
-	github.com/bborbe/collection v1.20.23 // indirect
+	github.com/bborbe/collection v1.20.24 // indirect
 	github.com/bborbe/kv v1.21.11 // indirect
-	github.com/bborbe/math v1.3.21 // indirect
+	github.com/bborbe/math v1.4.7 // indirect
 	github.com/bborbe/parse v1.10.21 // indirect
-	github.com/bborbe/validation v1.4.21 // indirect
+	github.com/bborbe/validation v1.4.23 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/emicklei/go-restful/v3 v3.13.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.9.3 // indirect
-	github.com/getsentry/sentry-go v0.48.0 // indirect
+	github.com/getsentry/sentry-go v0.49.0 // indirect
 	github.com/go-logr/logr v1.4.4 // indirect
 	github.com/go-openapi/jsonpointer v1.0.0 // indirect
 	github.com/go-openapi/jsonreference v1.0.0 // indirect
