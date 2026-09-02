@@ -8,6 +8,10 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+## Unreleased
+
+- chore: update github.com/bborbe/errors to v1.6.0, github.com/bborbe/http to v1.26.25, github.com/bborbe/k8s to v1.14.16, github.com/bborbe/log to v1.6.25, github.com/bborbe/run to v1.10.1, github.com/bborbe/sentry to v1.10.0, github.com/bborbe/service to v1.10.10, github.com/bborbe/time to v1.27.11, github.com/onsi/gomega to v1.43.0
+
 ## v0.1.7
 
 - fix: add the missing `github.com/bborbe/metrics` dependency to `go.mod` and resync `go.sum`. The v0.1.5 migration to the shared metrics library landed the import without its module requirement, so `make check-go-mod` failed with 14 missing `go.sum` entries — on the `v0.1.6` tag *and* on master. The repo could not build at all, and because nothing publishes an image on release, no CI or weekly rebuild ever surfaced it. Found during the 2026-08-30 nuke rebuild while trying to publish `v0.1.6`. `go mod tidy` also brought several stale indirect pins current (`bborbe/errors` v1.5.21, `bborbe/collection` v1.20.24, `bborbe/math` v1.4.7, `bborbe/validation` v1.4.23, `getsentry/sentry-go` v0.49.0) and normalized the single-entry `exclude` block.
