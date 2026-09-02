@@ -7,8 +7,8 @@ require (
 	github.com/bborbe/http v1.26.25
 	github.com/bborbe/k8s v1.14.16
 	github.com/bborbe/log v1.6.25
-	github.com/bborbe/metrics v0.6.0
-	github.com/bborbe/run v1.10.1
+	github.com/bborbe/metrics v0.6.1
+	github.com/bborbe/run v1.10.2
 	github.com/bborbe/sentry v1.10.0
 	github.com/bborbe/service v1.10.10
 	github.com/bborbe/time v1.27.11
@@ -24,7 +24,7 @@ require (
 
 require (
 	github.com/Masterminds/semver/v3 v3.5.0 // indirect
-	github.com/bborbe/argument/v2 v2.13.1 // indirect
+	github.com/bborbe/argument/v2 v2.13.2 // indirect
 	github.com/bborbe/collection v1.20.25 // indirect
 	github.com/bborbe/kv v1.21.12 // indirect
 	github.com/bborbe/math v1.4.8 // indirect
