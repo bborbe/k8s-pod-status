@@ -8,6 +8,10 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+## Unreleased
+
+- chore: update Go to 1.27.1 and github.com/bborbe/http to v1.26.26, github.com/bborbe/k8s to v1.14.8, github.com/bborbe/metrics to v0.6.2, github.com/bborbe/service to v1.10.13, github.com/bborbe/time to v1.27.13
+
 ## v0.1.11
 
 - chore: update go module dependencies
