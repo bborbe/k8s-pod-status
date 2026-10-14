@@ -4,13 +4,13 @@ go 1.27.2
 
 require (
 	github.com/bborbe/errors v1.6.3
-	github.com/bborbe/http v1.26.28
-	github.com/bborbe/k8s v1.14.21
+	github.com/bborbe/http v1.26.29
+	github.com/bborbe/k8s v1.14.22
 	github.com/bborbe/log v1.7.4
 	github.com/bborbe/metrics v0.6.7
 	github.com/bborbe/run v1.11.2
 	github.com/bborbe/sentry v1.10.4
-	github.com/bborbe/service v1.10.15
+	github.com/bborbe/service v1.10.16
 	github.com/bborbe/time v1.27.16
 	github.com/golang/glog v1.2.5
 	github.com/gorilla/mux v1.8.1
@@ -25,11 +25,11 @@ require (
 require (
 	github.com/Masterminds/semver/v3 v3.5.0 // indirect
 	github.com/bborbe/argument/v2 v2.13.6 // indirect
-	github.com/bborbe/collection v1.21.1 // indirect
-	github.com/bborbe/kv v1.21.17 // indirect
-	github.com/bborbe/math v1.4.13 // indirect
-	github.com/bborbe/parse v1.12.2 // indirect
-	github.com/bborbe/validation v1.5.3 // indirect
+	github.com/bborbe/collection v1.21.2 // indirect
+	github.com/bborbe/kv v1.21.18 // indirect
+	github.com/bborbe/math v1.4.14 // indirect
+	github.com/bborbe/parse v1.12.3 // indirect
+	github.com/bborbe/validation v1.5.4 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
