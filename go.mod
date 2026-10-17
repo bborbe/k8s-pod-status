@@ -4,7 +4,7 @@ go 1.27.2
 
 require (
 	github.com/bborbe/errors v1.6.3
-	github.com/bborbe/http v1.26.29
+	github.com/bborbe/http v1.26.30
 	github.com/bborbe/k8s v1.14.22
 	github.com/bborbe/log v1.7.4
 	github.com/bborbe/metrics v0.6.7
@@ -27,7 +27,7 @@ require (
 	github.com/bborbe/argument/v2 v2.13.6 // indirect
 	github.com/bborbe/collection v1.21.2 // indirect
 	github.com/bborbe/kv v1.21.18 // indirect
-	github.com/bborbe/math v1.4.14 // indirect
+	github.com/bborbe/math v1.4.15 // indirect
 	github.com/bborbe/parse v1.12.3 // indirect
 	github.com/bborbe/validation v1.5.4 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
@@ -54,7 +54,7 @@ require (
 	github.com/go-task/slim-sprig/v3 v3.0.0 // indirect
 	github.com/google/gnostic-models v0.7.1 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
-	github.com/google/pprof v0.0.0-20261012231050-2af12c3f4d87 // indirect
+	github.com/google/pprof v0.0.0-20261016150608-1facf8f91b50 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
