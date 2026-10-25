@@ -3,15 +3,15 @@ module github.com/bborbe/k8s-pod-status
 go 1.27.3
 
 require (
-	github.com/bborbe/errors v1.6.3
-	github.com/bborbe/http v1.26.30
-	github.com/bborbe/k8s v1.14.23
-	github.com/bborbe/log v1.7.4
+	github.com/bborbe/errors v1.6.4
+	github.com/bborbe/http v1.26.31
+	github.com/bborbe/k8s v1.14.24
+	github.com/bborbe/log v1.7.5
 	github.com/bborbe/metrics v0.6.8
-	github.com/bborbe/run v1.11.2
-	github.com/bborbe/sentry v1.10.5
-	github.com/bborbe/service v1.11.0
-	github.com/bborbe/time v1.27.17
+	github.com/bborbe/run v1.11.3
+	github.com/bborbe/sentry v1.10.6
+	github.com/bborbe/service v1.11.1
+	github.com/bborbe/time v1.27.18
 	github.com/golang/glog v1.2.5
 	github.com/gorilla/mux v1.8.1
 	github.com/onsi/ginkgo/v2 v2.33.1
@@ -24,12 +24,12 @@ require (
 
 require (
 	github.com/Masterminds/semver/v3 v3.5.0 // indirect
-	github.com/bborbe/argument/v2 v2.13.6 // indirect
-	github.com/bborbe/collection v1.21.3 // indirect
-	github.com/bborbe/kv v1.21.18 // indirect
-	github.com/bborbe/math v1.4.15 // indirect
+	github.com/bborbe/argument/v2 v2.13.8 // indirect
+	github.com/bborbe/collection v1.21.4 // indirect
+	github.com/bborbe/kv v1.21.19 // indirect
+	github.com/bborbe/math v1.4.16 // indirect
 	github.com/bborbe/parse v1.12.4 // indirect
-	github.com/bborbe/validation v1.5.5 // indirect
+	github.com/bborbe/validation v1.5.6 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
@@ -64,7 +64,7 @@ require (
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/prometheus/client_model v0.6.3 // indirect
 	github.com/prometheus/common v0.72.1 // indirect
-	github.com/prometheus/procfs v0.22.0 // indirect
+	github.com/prometheus/procfs v0.23.0 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
@@ -85,7 +85,7 @@ require (
 	k8s.io/apiextensions-apiserver v0.37.1 // indirect
 	k8s.io/klog/v2 v2.140.0 // indirect
 	k8s.io/kube-openapi v0.0.0-20260721132016-d427ff9ee9ad // indirect
-	k8s.io/utils v0.0.0-20260707023825-cf1189d6abe3 // indirect
+	k8s.io/utils v0.0.0-20261023123148-ca04ba58ecab // indirect
 	sigs.k8s.io/json v0.0.0-20260909141634-11ed52e25bc5 // indirect
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v6 v6.4.2 // indirect
