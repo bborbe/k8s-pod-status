@@ -3,12 +3,12 @@ module github.com/bborbe/k8s-pod-status
 go 1.27.3
 
 require (
-	github.com/bborbe/errors v1.6.4
+	github.com/bborbe/errors v1.6.5
 	github.com/bborbe/http v1.26.31
 	github.com/bborbe/k8s v1.14.24
 	github.com/bborbe/log v1.7.5
 	github.com/bborbe/metrics v0.6.8
-	github.com/bborbe/run v1.11.3
+	github.com/bborbe/run v1.11.4
 	github.com/bborbe/sentry v1.10.6
 	github.com/bborbe/service v1.11.1
 	github.com/bborbe/time v1.27.18
