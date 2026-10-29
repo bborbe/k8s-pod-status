@@ -8,7 +8,7 @@ require (
 	github.com/bborbe/k8s v1.14.27
 	github.com/bborbe/log v1.7.5
 	github.com/bborbe/metrics v0.6.8
-	github.com/bborbe/run v1.11.7
+	github.com/bborbe/run v1.11.8
 	github.com/bborbe/sentry v1.10.6
 	github.com/bborbe/service v1.11.2
 	github.com/bborbe/time v1.27.21
