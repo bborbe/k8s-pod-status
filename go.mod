@@ -5,7 +5,7 @@ go 1.27.3
 require (
 	github.com/bborbe/errors v1.6.5
 	github.com/bborbe/http v1.26.32
-	github.com/bborbe/k8s v1.14.26
+	github.com/bborbe/k8s v1.14.27
 	github.com/bborbe/log v1.7.5
 	github.com/bborbe/metrics v0.6.8
 	github.com/bborbe/run v1.11.7
