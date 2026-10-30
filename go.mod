@@ -5,13 +5,13 @@ go 1.27.3
 require (
 	github.com/bborbe/errors v1.6.5
 	github.com/bborbe/http v1.26.32
-	github.com/bborbe/k8s v1.14.29
+	github.com/bborbe/k8s v1.14.30
 	github.com/bborbe/log v1.7.5
 	github.com/bborbe/metrics v0.6.8
-	github.com/bborbe/run v1.11.8
+	github.com/bborbe/run v1.11.9
 	github.com/bborbe/sentry v1.10.6
 	github.com/bborbe/service v1.11.2
-	github.com/bborbe/time v1.27.23
+	github.com/bborbe/time v1.27.24
 	github.com/golang/glog v1.2.5
 	github.com/gorilla/mux v1.8.1
 	github.com/onsi/ginkgo/v2 v2.33.1
@@ -26,7 +26,7 @@ require (
 	github.com/Masterminds/semver/v3 v3.5.0 // indirect
 	github.com/bborbe/argument/v2 v2.13.8 // indirect
 	github.com/bborbe/collection v1.21.4 // indirect
-	github.com/bborbe/kv v1.21.26 // indirect
+	github.com/bborbe/kv v1.21.27 // indirect
 	github.com/bborbe/math v1.4.16 // indirect
 	github.com/bborbe/parse v1.12.4 // indirect
 	github.com/bborbe/validation v1.5.6 // indirect
