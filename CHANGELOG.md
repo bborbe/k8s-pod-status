@@ -8,6 +8,10 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+## Unreleased
+
+- feat: `k8s_pod_status_counter` carries a `job_name` label from the pod's `job-name` label, so an alert can tell a Job-owned pod from a standalone one. Empty for pods with no Job. Enables excluding a failed retry pod of a completed Job from `K8sPodStatus` without suppressing every Job pod
+
 ## v0.3.1
 
 - chore: update Go to 1.27.4 and github.com/bborbe/k8s to v1.14.33, github.com/bborbe/time to v1.27.28

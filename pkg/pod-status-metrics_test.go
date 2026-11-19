@@ -242,6 +242,82 @@ var _ = Describe("PodStatusMetrics", func() {
 		})
 	})
 
+	Describe("job_name label", func() {
+		// The real shape: a failed retry pod of a completed CronJob run. Its name
+		// ends in a random suffix (not digits), so NameFromPod leaves it intact.
+		const jobPodName = "registry-prune-29917560-bnqjq"
+		const jobName = "registry-prune-29917560"
+
+		var jobPod corev1.Pod
+
+		BeforeEach(func() {
+			jobPod = corev1.Pod{
+				ObjectMeta: metav1.ObjectMeta{
+					Name:      jobPodName,
+					Namespace: "docker-registry",
+					Labels: map[string]string{
+						"job-name": jobName,
+					},
+				},
+				Status: corev1.PodStatus{
+					Phase: corev1.PodFailed,
+				},
+			}
+		})
+
+		// statusLabels returns the label set of the counter series for name+status.
+		statusLabels := func(name, status string) (map[string]string, bool) {
+			families, err := prometheus.DefaultGatherer.Gather()
+			Expect(err).NotTo(HaveOccurred())
+			for _, family := range families {
+				if family.GetName() != "k8s_pod_status_counter" {
+					continue
+				}
+				for _, metric := range family.GetMetric() {
+					labels := make(map[string]string)
+					for _, label := range metric.GetLabel() {
+						labels[label.GetName()] = label.GetValue()
+					}
+					if labels["name"] == name && labels["status"] == status {
+						return labels, true
+					}
+				}
+			}
+			return nil, false
+		}
+
+		It("should expose the pod's job-name on the status counter", func() {
+			metrics.Set(jobPod)
+
+			labels, found := statusLabels(jobPodName, "Failed")
+			Expect(found).To(BeTrue())
+			Expect(labels["job_name"]).To(Equal(jobName))
+		})
+
+		It("should expose an empty job_name for a pod with no job-name label", func() {
+			jobPod.Labels = nil
+			jobPod.Name = "web-abcde"
+			jobPod.Status.Phase = corev1.PodRunning
+			metrics.Set(jobPod)
+
+			labels, found := statusLabels("web-abcde", "Running")
+			Expect(found).To(BeTrue())
+			Expect(labels["job_name"]).To(BeEmpty())
+		})
+
+		It("should delete the same label set on Remove, leaving no series behind", func() {
+			metrics.Set(jobPod)
+			_, found := statusLabels(jobPodName, "Failed")
+			Expect(found).To(BeTrue(), "precondition: Set must register the series")
+
+			metrics.Remove(jobPod)
+
+			_, found = statusLabels(jobPodName, "Failed")
+			Expect(found).To(BeFalse(),
+				"Remove must Delete with the identical job_name label set, or the series lingers")
+		})
+	})
+
 	Describe("PodStatus", func() {
 		DescribeTable("should return correct status for pod phases",
 			func(phase corev1.PodPhase, expectedStatus pkg.Status) {
