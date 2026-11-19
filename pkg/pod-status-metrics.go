@@ -25,7 +25,7 @@ var (
 		Subsystem: "pod_status",
 		Name:      "counter",
 		Help:      "Counts processed messages",
-	}, []string{"namespace", "name", "app", "status"})
+	}, []string{"namespace", "name", "app", "job_name", "status"})
 
 	restartCount = prometheus.NewGaugeVec(prometheus.GaugeOpts{
 		Namespace: "k8s",
@@ -69,6 +69,7 @@ func (m *podStatusMetrics) Set(pod corev1.Pod) {
 				"name":      name.String(),
 				"status":    s.String(),
 				"app":       pod.Labels["app"],
+				"job_name":  pod.Labels["job-name"],
 				"namespace": pod.Namespace,
 			}).Set(1)
 		} else {
@@ -76,6 +77,7 @@ func (m *podStatusMetrics) Set(pod corev1.Pod) {
 				"name":      name.String(),
 				"status":    s.String(),
 				"app":       pod.Labels["app"],
+				"job_name":  pod.Labels["job-name"],
 				"namespace": pod.Namespace,
 			}).Set(0)
 		}
@@ -128,6 +130,7 @@ func (m *podStatusMetrics) Remove(pod corev1.Pod) {
 			"name":      name.String(),
 			"status":    p.String(),
 			"app":       pod.Labels["app"],
+			"job_name":  pod.Labels["job-name"],
 			"namespace": pod.Namespace,
 		})
 		if deleted {
