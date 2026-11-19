@@ -21,12 +21,10 @@ jobs:
           cache: true
 
       - name: Install Trivy
-        run: |
-          TRIVY_VERSION=$(curl -sSfL https://api.github.com/repos/aquasecurity/trivy/releases/latest \
-            | grep '"tag_name"' | sed -E 's/.*"v([^"]+)".*/\1/')
-          curl -sSfL "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz" \
-            | sudo tar -xz -C /usr/local/bin trivy
-          trivy --version
+        uses: aquasecurity/setup-trivy@v0.3.1
+        with:
+          version: v0.76.2
+          cache: true
 
       - name: Run precommit checks
         run: make precommit
