@@ -8,6 +8,10 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+## Unreleased
+
+- chore: remove stale vulnerability ignore IDs that no longer apply (govulncheck, trivy)
+
 ## v0.4.0
 
 - feat: `k8s_pod_status_counter` carries a `job_name` label from the pod's `job-name` label, so an alert can tell a Job-owned pod from a standalone one. Empty for pods with no Job. Enables excluding a failed retry pod of a completed Job from `K8sPodStatus` without suppressing every Job pod
